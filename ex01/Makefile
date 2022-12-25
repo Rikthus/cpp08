@@ -1,6 +1,6 @@
 #update on every project
 NAME := span
-LST_SRC := main Span.cpp
+LST_SRC := main Span
 
 #update to match c or cpp
 CC := c++

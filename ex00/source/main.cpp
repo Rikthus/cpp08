@@ -13,7 +13,7 @@ int	main(void)
 	vec.push_back(3);
 	vec.push_back(4);
 	
-	value = -1;
+	value = 0;
 
 	try
 	{

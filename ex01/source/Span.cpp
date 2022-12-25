@@ -8,24 +8,33 @@
 //				FUNCTIONS				//
 //////////////////////////////////////////
 
-unsigned int	Span::shortestSpan(void)	const
+unsigned int	Span::shortestSpan(void)
 {
+	unsigned int		shortSpan;
+	unsigned int		diff;
+	unsigned int const	vecSize = this->mVec.size() - 1;
+
 	if (this->mVec.size() < 2)
 		throw(NotEnoughNumbersException());
-	else
+	std::sort(this->mVec.begin(), this->mVec.end());
+	shortSpan = this->mVec.at(1) - this->mVec.at(0);
+	for (unsigned int i = 1; i < vecSize; i++)
 	{
-
+		diff = this->mVec.at(i + 1) - this->mVec.at(i);
+		if (shortSpan > diff)
+			shortSpan = diff;
 	}
+	return (shortSpan);
 }
 
-unsigned int	Span::longestSpan(void)	const
+unsigned int	Span::longestSpan(void)
 {
+	unsigned int	longSpan;
 	if (this->mVec.size() < 2)
 		throw(NotEnoughNumbersException());
-	else
-	{
-		
-	}
+	std::sort(this->mVec.begin(), this->mVec.end());
+	longSpan = this->mVec.back() - this->mVec.front();
+	return (longSpan);
 }
 
 void	Span::addNumber(int const num)
@@ -60,8 +69,12 @@ Span::~Span(void) {}
 
 Span &	Span::operator=(Span const & rhs)
 {
-	this->mVec.clear();
-	this->mSize = rhs.mSize;
-	for (unsigned int i = 0; i < this->mSize; i++)
-		this->mVec.push_back(rhs.mVec.at(i));
+	if (this != &rhs)
+	{
+		this->mVec.clear();
+		this->mSize = rhs.mSize;
+		for (unsigned int i = 0; i < this->mSize; i++)
+			this->mVec.push_back(rhs.mVec.at(i));
+	}
+	return (*this);
 }

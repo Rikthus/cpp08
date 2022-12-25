@@ -8,8 +8,8 @@
 class	Span
 {
 	public:
-		unsigned int	shortestSpan(void)	const;
-		unsigned int	longestSpan(void)	const;
+		unsigned int	shortestSpan(void);
+		unsigned int	longestSpan(void);
 		void			addNumber(int const num);
 
 		Span(unsigned int size);
@@ -23,7 +23,7 @@ class	Span
 		{
 			virtual const char	*what(void) const	throw()
 			{
-				return ("The Span is already full, connot add more numbers");
+				return ("The Span is already full, cannot add more numbers");
 			}
 		};
 		class	NotEnoughNumbersException : std::exception
