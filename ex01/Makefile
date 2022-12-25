@@ -1,6 +1,6 @@
 #update on every project
-NAME := easyfind
-LST_SRC := main
+NAME := span
+LST_SRC := main Span.cpp
 
 #update to match c or cpp
 CC := c++
