@@ -11,6 +11,7 @@ class	Span
 		unsigned int	shortestSpan(void);
 		unsigned int	longestSpan(void);
 		void			addNumber(int const num);
+		void			fill(std::vector<int>::iterator itStart, std::vector<int>::iterator itStop);
 
 		Span(unsigned int size);
 		Span(Span const & src);
@@ -21,17 +22,11 @@ class	Span
 
 		class	SpanIsFullException : std::exception
 		{
-			virtual const char	*what(void) const	throw()
-			{
-				return ("The Span is already full, cannot add more numbers");
-			}
+			virtual const char	*what(void) const throw();
 		};
 		class	NotEnoughNumbersException : std::exception
 		{
-			virtual const char	*what(void) const	throw()
-			{
-				return ("There is not enough numbers to find a span");
-			}
+			virtual const char	*what(void) const throw();
 		};
 	private:
 		unsigned int		mSize;

@@ -45,6 +45,11 @@ void	Span::addNumber(int const num)
 		this->mVec.push_back(num);
 }
 
+void	Span::fill(std::vector<int>::iterator itStart, std::vector<int>::iterator itStop)
+{
+	
+}
+
 //////////////////////////////////////////
 //				BUILDERS				//
 //////////////////////////////////////////
@@ -77,4 +82,18 @@ Span &	Span::operator=(Span const & rhs)
 			this->mVec.push_back(rhs.mVec.at(i));
 	}
 	return (*this);
+}
+
+//**************************************************************************//
+//								NESTED CLASS								//
+//**************************************************************************//
+
+const char	*Span::SpanIsFullException::what(void) const throw()
+{
+	return ("The Span is already full, cannot add more numbers");
+}
+
+const char	*Span::NotEnoughNumbersException::what(void) const throw()
+{
+	return ("There is not enough numbers to find a span");
 }

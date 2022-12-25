@@ -24,14 +24,13 @@
 int	main(void)
 {
 	Span			test(1);
-	unsigned int	spanLen = 0;
 
 	std::cout << std::endl;
 	std::cout << "TEST : 0 numbers inside" << std::endl;
 
 	try
 	{
-		spanLen = test.shortestSpan();
+		test.shortestSpan();
 	}
 	catch (std::exception & e)
 	{
@@ -39,7 +38,7 @@ int	main(void)
 	}
 	try
 	{
-		spanLen = test.longestSpan();
+		test.longestSpan();
 	}
 	catch (std::exception & e)
 	{
@@ -47,11 +46,10 @@ int	main(void)
 	}
 	std::cout << std::endl;
 	test.addNumber(-315467);
-	std::cout << spanLen << std::endl;
 	std::cout << "TEST : 1 numbers inside" << std::endl;
 	try
 	{
-		spanLen = test.shortestSpan();
+		test.shortestSpan();
 	}
 	catch (std::exception & e)
 	{
@@ -59,7 +57,7 @@ int	main(void)
 	}
 	try
 	{
-		spanLen = test.longestSpan();
+		test.longestSpan();
 	}
 	catch (std::exception & e)
 	{
