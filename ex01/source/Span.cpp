@@ -47,7 +47,19 @@ void	Span::addNumber(int const num)
 
 void	Span::fill(std::vector<int>::iterator itStart, std::vector<int>::iterator itStop)
 {
-	
+	if (itStop <= itStart)
+		return ;
+	for (;itStart < itStop; itStart++)
+	{
+		try
+		{
+			this->addNumber(*itStart);
+		}
+		catch (std::exception & e)
+		{
+			std::cerr << e.what() << std::endl;
+		}
+	}
 }
 
 //////////////////////////////////////////

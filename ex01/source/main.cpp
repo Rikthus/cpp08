@@ -7,6 +7,8 @@
 //								STANDARD TESTS								//
 //////////////////////////////////////////////////////////////////////////////
 
+// SUBJECT TESTS
+
 // int	main(void)
 // {
 // 	Span sp = Span(5);
@@ -21,50 +23,85 @@
 // 	return 0;
 // }
 
+
+// EXCEPTION TESTS
+
+// int	main(void)
+// {
+// 	Span			test(1);
+
+// 	std::cout << std::endl;
+// 	std::cout << "TEST : 0 numbers inside" << std::endl;
+
+// 	try
+// 	{
+// 		test.shortestSpan();
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// 	try
+// 	{
+// 		test.longestSpan();
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// 	std::cout << std::endl;
+// 	test.addNumber(0);
+// 	std::cout << "TEST : 1 numbers inside" << std::endl;
+// 	try
+// 	{
+// 		test.shortestSpan();
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// 	try
+// 	{
+// 		test.longestSpan();
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// 	std::cout << std::endl;
+// 	std::cout << "TEST : full span" << std::endl;
+// 	try
+// 	{
+// 		test.addNumber(1);
+// 	}
+// 	catch (std::exception & e)
+// 	{
+// 		std::cout << e.what() << std::endl;
+// 	}
+// }
+
+
+//  FILL FUNCTION TEST
+
 int	main(void)
 {
-	Span			test(1);
+	std::vector<int>			vec;
+	Span						span(5);
+	std::vector<int>::iterator	itStart;
+	std::vector<int>::iterator	itStop;
 
-	std::cout << std::endl;
-	std::cout << "TEST : 0 numbers inside" << std::endl;
+	vec.push_back(0);
+	vec.push_back(1);
+	vec.push_back(2);
+	vec.push_back(3);
+	vec.push_back(4);
 
-	try
-	{
-		test.shortestSpan();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		test.longestSpan();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	test.addNumber(-315467);
-	std::cout << "TEST : 1 numbers inside" << std::endl;
-	try
-	{
-		test.shortestSpan();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	try
-	{
-		test.longestSpan();
-	}
-	catch (std::exception & e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-	std::cout << std::endl;
-	std::cout << "TEST : full span" << std::endl;
+	itStart = std::begin(vec);
+	itStop = std::end(vec);
+
+	span.fill(itStart, itStop);
+	std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
+	std::cout << "Longest span: " << span.longestSpan() << std::endl;
 }
 
 //////////////////////////////////////////////////////////////////////////
