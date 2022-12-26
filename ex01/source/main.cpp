@@ -9,19 +9,19 @@
 
 // SUBJECT TESTS
 
-// int	main(void)
-// {
-// 	Span sp = Span(5);
+int	main(void)
+{
+	Span sp = Span(5);
 
-// 	sp.addNumber(6);
-// 	sp.addNumber(3);
-// 	sp.addNumber(17);
-// 	sp.addNumber(9);
-// 	sp.addNumber(11);
-// 	std::cout << sp.shortestSpan() << std::endl;
-// 	std::cout << sp.longestSpan() << std::endl;
-// 	return 0;
-// }
+	sp.addNumber(6);
+	sp.addNumber(3);
+	sp.addNumber(17);
+	sp.addNumber(9);
+	sp.addNumber(11);
+	std::cout << sp.shortestSpan() << std::endl;
+	std::cout << sp.longestSpan() << std::endl;
+	return 0;
+}
 
 
 // EXCEPTION TESTS
@@ -83,26 +83,26 @@
 
 //  FILL FUNCTION TEST
 
-int	main(void)
-{
-	std::vector<int>			vec;
-	Span						span(5);
-	std::vector<int>::iterator	itStart;
-	std::vector<int>::iterator	itStop;
+// int	main(void)
+// {
+// 	std::vector<int>			vec;
+// 	Span						span(5);
+// 	std::vector<int>::iterator	itStart;
+// 	std::vector<int>::iterator	itStop;
 
-	vec.push_back(0);
-	vec.push_back(1);
-	vec.push_back(2);
-	vec.push_back(3);
-	vec.push_back(4);
+// 	vec.push_back(0);
+// 	vec.push_back(1);
+// 	vec.push_back(2);
+// 	vec.push_back(3);
+// 	vec.push_back(4);
 
-	itStart = std::begin(vec);
-	itStop = std::end(vec);
+// 	itStart = std::begin(vec);
+// 	itStop = std::end(vec);
 
-	span.fill(itStart, itStop);
-	std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
-	std::cout << "Longest span: " << span.longestSpan() << std::endl;
-}
+// 	span.fill(itStart, itStop);
+// 	std::cout << "Shortest span: " << span.shortestSpan() << std::endl;
+// 	std::cout << "Longest span: " << span.longestSpan() << std::endl;
+// }
 
 //////////////////////////////////////////////////////////////////////////
 //								BIG TESTS								//

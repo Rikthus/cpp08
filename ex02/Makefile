@@ -1,5 +1,5 @@
 #update on every project
-NAME := easyfind
+NAME := mutant
 LST_SRC := main
 
 #update to match c or cpp

@@ -20,11 +20,11 @@ class	Span
 
 		Span &	operator=(Span const & rhs);
 
-		class	SpanIsFullException : std::exception
+		class	SpanIsFullException : public std::exception
 		{
 			virtual const char	*what(void) const throw();
 		};
-		class	NotEnoughNumbersException : std::exception
+		class	NotEnoughNumbersException : public std::exception
 		{
 			virtual const char	*what(void) const throw();
 		};
